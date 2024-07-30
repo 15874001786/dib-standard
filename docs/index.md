@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "dib document"
+  name: "document"
   text: ""
-  tagline: dib document description
+  tagline: document description
   actions:
     - theme: brand
       text: Enter documenntation
