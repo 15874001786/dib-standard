@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as i,a2 as n}from"./chunks/framework.LV4lgCXr.js";const g=JSON.parse('{"title":"Git 规约","description":"","frontmatter":{},"headers":[],"relativePath":"git-standard.md","filePath":"git-standard.md"}'),e={name:"git-standard.md"},t=n("",8),l=[t];function p(r,c,h,E,d,k){return i(),a("div",null,l)}const m=s(e,[["render",p]]);export{g as __pageData,m as default};

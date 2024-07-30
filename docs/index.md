@@ -9,17 +9,17 @@ hero:
   actions:
     - theme: brand
       text: Enter documenntation
-      link: /markdown-examples
+      link: /git-standard
     - theme: alt
       text: Standard
       link: /api-examples
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Git Standard
+    details: Git Standard
+  - title: Typescript Standard
+    details: Typescript Standard
+  - title: Css Standard
+    details: Css Standard
 ---
 
