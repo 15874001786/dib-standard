@@ -34,7 +34,7 @@ npx @f2elint/cli init
 集成到 CI/CD：你还可以将 F2Elint 集成到你的持续集成/持续部署（CI/CD）流程中，这样你就可以在代码提交到仓库时自动检查代码质量。
 
 ### 2.airbnb-base
-eslint-config-airbnb-base 是 Airbnb 公司开发并维护的一套 JavaScript 语言的编程规范，被广泛应用于许多项目中。使用这套，prettier可让团队自行编写成团队大部分成员所习惯的编码风格。
+eslint-config-airbnb-base 是 Airbnb 公司开发并维护的一套 JavaScript 语言的编程规范，被广泛应用于许多项目中。使用这套基于Base基础上去添加 eslint 和 prettier的内容，定制度更高，团队可自行编写成团队大部分成员所习惯的编码风格。
 
 ### 3.配置Husky和lint-staged
 [husky+lint-staged介绍文章](https://juejin.cn/post/7085534305249656862)
@@ -43,11 +43,11 @@ eslint-config-airbnb-base 是 Airbnb 公司开发并维护的一套 JavaScript �
 
 通过husky，去处理 git pre-commit和push等钩子，然后在pre-commit钩子中用lint-staged       去处理 git add 缓冲区中的提交内容，在Lint-staged中去执行 esint --fix，prettier --write 等。在钩子中也可执行tsc的检测校验，这个由开发团队自行决定。通过husky、lint-staged的配置，我们能做到
 
-1.自动执行eslint prettier --fix、可让代码风格、规范统一
+1.针对本次提交的代码自动执行eslint prettier --fix、可让代码风格、规范统一
 
-2.当工具检测不通过时则拦截commit的提交，初步通过工具去保证代码质量
+2.当工具检测不通过时则拦截commit的提交，通过工具去保证代码质量
 
-需要在package script中写prepare: husky install，通常在npm i 后，会默认执行一遍prepare去进行husky的初始化，若不是通过Npm install的，也可手动输入prepare去初始化Husky
+需要在package script中写prepare: husky install，通常在npm i 后，会默认执行一遍prepare去进行husky的初始化，若不是通过Npm install的，即要手动输入prepare去初始化Husky
 
 ### 4.node依赖包与vscode插件统一
 在上述的eslint prettier配置完成后，需要在vscode中也安装eslint、pretteier的插件，插件会默认读取根目录下的.eslintrc .prettierrc，这样在vscode开发中，也能看到编辑器的eslint等报错，而进行及时的更改
@@ -83,17 +83,19 @@ eslint-config-airbnb-base 是 Airbnb 公司开发并维护的一套 JavaScript �
 
 7.处理表格渲染等只需要初始赋值渲染，而不用后续给内部值改动的场景如表格列表渲染页面，统一使用shallowRef去替代ref。
 
-8.为组件样式去设置作用域，修改ui框架的相关css代码在全局styles里面去维护一个如custom-element.scss的文件，去进行样式重写
+8.多个请求并发时，尽量用Promise.allSettled替代Promise.all，Promise.allSettled会将成功和失败的结果都返回，可以更好的处理失败的情况。
 
-9.vue-router的route name 命名规则通常是使用camelCase（驼峰式）或 kebab-case（短横线分隔式）。例如，myRoute 或 my-route。
+9.为组件样式去设置作用域，修改ui框架的相关css代码在全局styles里面去维护一个如custom-element.scss的文件，去进行样式重写
 
-10.不得破坏vue的单向数据流，举例：子组件修改父组件prop传过来的值。
+10.vue-router的route name 命名规则通常是使用camelCase（驼峰式）或 kebab-case（短横线分隔式）。例如，myRoute 或 my-route。
+
+11.不得破坏vue的单向数据流，举例：子组件修改父组件prop传过来的值。
 
 	通常情况下，可以使用v-model配合computed set组合去修改适配上述场景，或者使用本地状态，一次性的emit修改父属性去处理。
 
-11.避免内存泄漏，在组件onUnmounted中往往需要给bus.on，定时器等代码给上终止的操作
+12.避免内存泄漏，在组件onUnmounted中往往需要给bus.on，定时器等代码给上终止的操作
 
-12.公共组件或者重要模块需要严格配置ts，一是静态检查，二是方便他人阅读
+13.公共组件或者重要模块需要严格配置ts，一是静态检查，二是方便他人阅读
 
 ## 代码评审
 

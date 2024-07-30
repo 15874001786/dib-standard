@@ -9,7 +9,7 @@
 介绍分支模型前的准备工作：
 1. 首先，设置仓库保护分支，以下模型需设master、rc俩分支为受保护分支，允许合并者为maintainer，
   允许推送者为 No one即不允许任何人直接推送代码到者俩分支
-2. 其次，如果你的合并请求需要不需要merge commit，即每一条commit都是干净的，对应某个功能或者bugfix而不需要
+2. 其次，如果你的合并请求不需要merge commit，即每一条commit都是干净的，对应某个功能或者bugfix而不需要
   git 自动生成的，可以在Merge request中设置Merge method为Fase-forward merge，这样可以保证commit历史记录的清晰和完整。(建议设置)
 3. 若采取了第二种 commit 清晰模式，那你则需要再设置Git pull，使其模式为rebase模式，git config pull.rebase true，当你运行 git pull 命令时，Git 会执行 git fetch 后跟 git rebase，将当前分支的提交应用到远程分支的更新之上，而不是创建一个新的合并提交。
 
@@ -145,10 +145,14 @@ git tag 就是通过语义化的名称来给仓库标注一个个具体的节点
 如带特殊环境如beta环境 则vX.Y.Z-beta.1
 
 理论上敏捷迭代过程中，只有迭代结束上线的tag和迭代过程中的热补丁bug
+
 针对迭代结束的上线tag 酌情考虑版本号是修改X还是Y具体参考上述的链接文章
+
 针对热补丁bug 则在上周敏捷迭代的tag基础上Z+1
 
-tag标签发布时，需要在message中严格记录下此tag的发布内容列表。另外，可以维护一个文档中心，文档中心md形式记录下tag号，时间，发布内容等。在tag标签发布说明中，给入文档中心的md或者链接地址(gitlab的标签发行说明支持md文件的拖动记录)
+tag标签发布时，需要在message中严格记录下此tag的发布内容列表。
+
+另外，可以维护一个文档中心，文档中心md形式记录下tag号，时间，发布内容等。在tag标签发布说明中，给入文档中心的md或者链接地址(gitlab的标签发行说明支持md文件的拖动记录)
 
 ## 工具
 可结合husky配合commitlint去校验commit的规范，
