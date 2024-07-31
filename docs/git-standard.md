@@ -53,23 +53,31 @@
 ````
 
 ### 常见问题
-#### 1.出现紧急bug如何做？
+#### 1.为什么dev分支需要merge、而rc需要提mr？
+
+这是因为rc是较稳定的环境分支，是功能在dev测试无误后提交代码评审合并过来后的分支。
+
+在rc merge功能等分支是不可行的，1是因为rc分支受保护，no one push，2是因为需要mr 评审这个环节，直接merge push显然没有了这个环节。
+
+dev是脏分支，分支上有着所有需要测试开发验证的功能、fix等。merge 相当于是commit的合并，显然在dev分支上，不需要保持commit的清晰，只需要保证commit存在即可。
+
+#### 2.出现紧急bug如何做？
 
 出现紧急线上bug、需从master checkout 出一个hotfix的分支，与上面解决bug问题，dev merge后更新dev环境去验证修复，修复无误后直接mr合并到master上（合并完成后rc分支需及时 rebase master）
 
-#### 2.一周内上线的功能/优化/bug如何做？
+#### 3.一周内上线的功能/优化/bug如何做？
 
 一周内需上线的功能或者bug或者优化，从rc上checkout分支出来，于上面修改，修改完成后于dev merge在dev上自测验证，自测验证通过后，合并到dev分支，测试和业务人员进行测试验证，验证无误后提mr 合并回rc。
 
-#### 3.多周开发的功能如何做？
+#### 4.多周开发的功能如何做？
 
 多周的功能，从rc上checkout分支出来，于上面开发修改，在dev merge后提到dev去联调和自测，自测通过后，合并到test分支，测试和业务人员进行测试，测试通过后，等到需要更新时再去提mr合并到rc。
 
-#### 4.什么情况下需要重置dev分支
+#### 5.什么情况下需要重置dev分支
 
 若rc上commit log与dev上commit log相差很大，通常为准备发准生产时，合并回rc后与dev相差较大(因为commit合并的关系)，此时需知会组内人员，push origin --delete删除远程dev分支，于最新rc上checkout出一个新的dev 更新到远程origin上。此时不需上rc需上dev的分支需再次merge一遍。
 
-#### 5.如何合并commit记录
+#### 6.如何合并commit记录
 
 可在gitlab上线上合并，也可以在本地rebase -i合并成一条后提交上去，建议本地合并
 https://www.cnblogs.com/vow007/p/18114699
