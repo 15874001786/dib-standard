@@ -22,6 +22,7 @@ export default defineConfig({
           { text: 'css-standard', link: '/css' },
           { text: 'html-standard', link: '/html' },
           { text: 'typescriptstandard', link: '/typescript' },
+          { text: 'vue-standard', link: '/vue-standard' },
         ]
       }
     ],

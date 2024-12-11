@@ -150,7 +150,8 @@ git tag 就是通过语义化的名称来给仓库标注一个个具体的节点
 命名格式为 v{semver}，semver是遵循https://semver.org/lang/zh-CN/的版本号，例如 v1.2.3。
 
 版本号约定 vX.Y.Z
-如带特殊环境如beta环境 则vX.Y.Z-beta.1
+对当前系统几个环境，命名为 vX.Y.Z-beta.1(test环境)， vX.Y.Z-dev.1 vX.Y.Z-rc.1 vX.Y.Z-uat.1。 uat.1这个1就往上一直累加，待到下次生产发版后如v1.1.1后，uat，test等重置后，命名也从v1.1.1-beta.1开始。好处 1.通过前置版本号能知道当前分支是基于rc，master哪里拉出来的。 2.各个环境唯一且辨识度高
+
 
 理论上敏捷迭代过程中，只有迭代结束上线的tag和迭代过程中的热补丁bug
 
