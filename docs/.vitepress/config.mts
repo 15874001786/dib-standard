@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "document",
+  title: "dib-standard",
   description: "document description",
   base: '/dib-standard/dist/',
   themeConfig: {
@@ -23,6 +23,7 @@ export default defineConfig({
           { text: 'html-standard', link: '/html' },
           { text: 'typescriptstandard', link: '/typescript' },
           { text: 'vue-standard', link: '/vue-standard' },
+          { text: 'ars-front-standard', link: '/ars-front-standard' },
         ]
       }
     ],
