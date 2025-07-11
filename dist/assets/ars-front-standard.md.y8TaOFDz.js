@@ -436,15 +436,12 @@ import{_ as s,c as i,o as a,a2 as n}from"./chunks/framework.LV4lgCXr.js";const F
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># good</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">user-management/</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">userprofile/</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">user_profile/</span></span></code></pre></div></li></ul><h4 id="_5-4-2-文件命名" tabindex="-1">5.4.2 文件命名 <a class="header-anchor" href="#_5-4-2-文件命名" aria-label="Permalink to &quot;5.4.2 文件命名&quot;">​</a></h4><ul><li><p><strong>强制</strong> 使用小写字母命名文件</p><div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># bad</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">UserProfile.vue</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">user_profile/</span></span></code></pre></div></li></ul><h4 id="_5-4-2-文件命名" tabindex="-1">5.4.2 文件命名 <a class="header-anchor" href="#_5-4-2-文件命名" aria-label="Permalink to &quot;5.4.2 文件命名&quot;">​</a></h4><ul><li><p><strong>强制</strong> 使用小写字母或kebab-case命名文件 js ts</p><div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># bad</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">UserProfile.js</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">USER_PROFILE.vue</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># good</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">user-profile.vue</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">userprofile.js</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">userProfile.vue</span></span></code></pre></div></li><li><p><strong>推荐</strong> 组件文件使用 PascalCase 命名</p><div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Vue 组件文件</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">user-profile.js</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">userprofile.ts</span></span></code></pre></div></li><li><p><strong>推荐</strong> 组件文件使用 PascalCase 命名</p><div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Vue 组件文件</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">UserProfile.vue</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">NavigationBar.vue</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">ProductCard.vue</span></span>
@@ -468,7 +465,6 @@ import{_ as s,c as i,o as a,a2 as n}from"./chunks/framework.LV4lgCXr.js";const F
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">style.CSS</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># good</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">UserProfile.vue</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">config.js</span></span>
 <span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">style.css</span></span></code></pre></div></li></ul><h4 id="_5-4-3-变量和函数命名" tabindex="-1">5.4.3 变量和函数命名 <a class="header-anchor" href="#_5-4-3-变量和函数命名" aria-label="Permalink to &quot;5.4.3 变量和函数命名&quot;">​</a></h4><ul><li><p><strong>强制</strong> 使用小驼峰（camelCase）命名原始类型、对象、函数、实例</p><div class="language-js vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">// bad</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> this_is_my_string</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583;"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> &#39;foo&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">;</span></span>

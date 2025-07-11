@@ -812,18 +812,15 @@ module.exports = {
 
 #### 5.4.2 文件命名
 
-- **强制** 使用小写字母命名文件
+- **强制** 使用小写字母或kebab-case命名文件 js ts
 
   ```bash
   # bad
-  UserProfile.vue
   UserProfile.js
-  USER_PROFILE.vue
 
   # good
-  user-profile.vue
-  userprofile.js
-  userProfile.vue
+  user-profile.js
+  userprofile.ts
   ```
 
 - **推荐** 组件文件使用 PascalCase 命名
@@ -871,7 +868,6 @@ module.exports = {
   style.CSS
 
   # good
-  UserProfile.vue
   config.js
   style.css
   ```
